@@ -36,16 +36,14 @@ class ProductManager {
         return; 
     }
 
-    getProductById = (id) => {
-        const productId = this.products.findIndex((product) => product.id === id);
-       
-        if (productId === -1) {
-            console.log('Not found');
-            return;
-        } else {
-            console.log(`Product found: ${this.products[productId].title}`);
-            return;
+    getProductById(id) {
+        let one = this.products.find(each=> each.id === id)
+        if (one) {
+            console.log(one)
+            return one
         }
+        console.log('not found')
+        return null
     }
 }
 
